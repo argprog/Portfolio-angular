@@ -1,7 +1,11 @@
 <section class="projects">
     <div class="proyectos">
       <h5>Proyectos</h5>
-      <a href="#"><img class="fotoportfolio" src="assets\Images\portfolio.jpg" alt="portfolio"></a>
-      <br>
+      <ul class="list-group list-group-horizontal">
+        <li class="list-group-item" *ngFor="let proyectos of proyectosLista">
+          <p>{{proyectos.institucion}}</p>
+          <small>{{proyectos.fecha}}: {{proyectos.nombre}}</small>
+        </li>
+      </ul>
     </div>
   </section>

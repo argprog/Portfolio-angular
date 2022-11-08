@@ -7,35 +7,10 @@
         </div>
         <div class="col-md-6">
           <div class="card-body">
-            <h4 class="card-title">Laura Daniela Alvarez</h4>
-            <p class="card-text">Desarrolladora Full Stack Jr.</p>
-            <p class="card-text"><small class="text-muted">Lic. en Relaciones Laborales, Docente de RRHH y Especialista
-                en Innovación Empresarial.</small></p>
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
-              data-bs-target="#exampleModal">
-              Información de contacto
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-              aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Contacto</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <i class="fa-solid fa-envelope"></i> alvarezlaura1984@gmail.com <br> <br>
-                    <i class="fa-brands fa-whatsapp"></i> 5411 36149134
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <h4 class="card-title">{{miPortfolio.nombre}}</h4>
+            <p class="card-text">{{miPortfolio.certificacion}}</p>
+            <p class="card-text"><small class="text-muted">{{miPortfolio.profesion}}</small></p>
+            <p class="card-text"><small class="text-muted">{{miPortfolio.mail}} - {{miPortfolio.telefono}}</small></p>
           </div>
         </div>
       </div>

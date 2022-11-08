@@ -1,11 +1,8 @@
 <section class="idiomas">
     <h5>Idiomas</h5>
     <ul class="list-group list-group-horizontal">
-      <li class="list-group-item">
-        <img class="logoidiomas" src="assets\Images\banderauk.png" alt="banderauk">Inglés B2
-      </li>
-      <li class="list-group-item">
-        <img class="logoidiomas" src="assets\Images\Banderaitalia.jpg" alt="banderaitalia">Italiano A2
+      <li class="list-group-item" *ngFor="let idiomas of idiomasLista">
+        <p>{{idiomas.nombre}} {{idiomas.nivel}}</p>
       </li>
     </ul>
   </section>

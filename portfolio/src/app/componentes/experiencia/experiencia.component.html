@@ -1,17 +1,9 @@
 <section class="experiencia">
     <h5>Experiencia</h5>
     <ul class="list-group">
-      <li class="list-group-item">
-        <img class="logoexperiencia" src="assets\Images\lacaja.png" alt="logocaja">
-        <p>La Caja de Ahorro y Seguro S.A.</p>
-        <small>2005 - Actualidad</small> <br>
-        <small>Analista administrativa</small><br>
-      </li>
-      <li class="list-group-item">
-        <img class="logoexperiencia" src="assets\Images\icea.jpg" alt="logoicea">
-        <p>ICEA Altos Estudios</p>
-        <small>2022 - Actualidad</small> <br>
-        <small>Profesora</small><br>
+      <li class="list-group-item" *ngFor="let experiencia of experienciaLista">
+        <p>{{experiencia.empresa}}</p>
+        <small>{{experiencia.fechainicio}} - {{experiencia.fechafin}}: {{experiencia.puesto}}</small>
       </li>
     </ul>
   </section>

@@ -1,0 +1,9 @@
+.fotoportfolio{
+    width: 250px;
+    height: 150px;
+    display: block;
+    margin-left: 170px;
+    border: solid;
+    border-color: grey;
+    border-width: 0.2px;
+}

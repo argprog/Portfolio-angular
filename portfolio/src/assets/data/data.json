@@ -1,0 +1,143 @@
+{
+            "nombre":"Laura Daniela Alvarez",
+            "certificacion":"Desarrolladora Full Stack Jr.",
+            "profesion":"Lic. en Relaciones Laborales, Docente de RRHH y Especialista en Innovación Empresarial.",
+            "mail":"correo electrónico",
+            "telefono":"número de teléfono",
+"redes":[
+        {
+            "id":0,
+            "icono":"fa-linkedin"
+        },
+        {
+            "id":1,
+            "icono":"fa-github"
+        },
+        {
+            "id":2,
+            "icono":"fa-user-lock"
+        }
+        ],
+            
+"experiencia":[
+        {
+            "id":0,
+            "empresa":"La Caja de Ahorro y Seguro S.A.",
+            "fechainicio": 2005,
+            "fechafin":"Actualidad",
+            "puesto":"Analista administrativa"
+        },
+        {
+            "id":1,
+            "empresa":"ICEA Altos Estudios",
+            "fechainicio": 2022,
+            "fechafin":"Actualidad",
+            "puesto":"Profesora"
+        }
+    ],
+"educacion":[
+        {
+            "institucion":"Universidad Politécnica de Valencia",
+            "fecha": 2022,
+            "titulo":"Especialista en Innovación Empresarial"
+        },
+        {
+            "institucion":"Universidad Nacional de La Matanza",
+            "fecha": 2021,
+            "titulo":"Licenciada en Relaciones Laborales"
+        }
+    ],
+"idiomas":[
+        {
+            "id":0,
+            "nombre":"Inglés",
+            "nivel":"B2"
+        },
+        {
+            "id":1,
+            "nombre":"Italiano",
+            "nivel":"A2"
+        }
+    ],
+"skills":[
+        {
+            "id":0,
+            "icono":"fa-html5",
+            "nombre":"HTML",
+            "porcentaje":50
+        },
+        {
+            "id":1,
+            "icono":"fa-css3-alt",
+            "nombre":"CSS",
+            "porcentaje":50
+        },
+        {
+            "id":2,
+            "icono":"fa-bootstrap",
+            "nombre":"Bootstrap",
+            "porcentaje":50
+        },
+        {
+            "id":3,
+            "icono":"fa-js",
+            "nombre":"JavaScript",
+            "porcentaje":50
+        },
+        {
+            "id":4,
+            "icono":"fa-angular",
+            "nombre":"Angular",
+            "porcentaje":50
+        },
+        {
+            "id":5,
+            "icono":"fa-database",
+            "nombre":"MySQL",
+            "porcentaje":50
+        },
+        {
+            "id":6,
+            "icono":"fa-magnet",
+            "nombre":"Perseverancia",
+            "porcentaje":50
+        },
+        {
+            "id":7,
+            "icono":"fa-temperature-low",
+            "nombre":"Temple",
+            "porcentaje":50
+        },
+        {
+            "id":8,
+            "icono":"fa-clock",
+            "nombre":"Gestión del tiempo",
+            "porcentaje":50
+        },
+        {
+            "id":9,
+            "icono":"fa-clipboard-list",
+            "nombre":"Planificación",
+            "porcentaje":50
+        },
+        {
+            "id":10,
+            "icono":"fa-people-group",
+            "nombre":"Trabajo en equipo",
+            "porcentaje":50
+        },
+        {
+            "id":11,
+            "icono":"fa-palette",
+            "nombre":"Creatividad",
+            "porcentaje":50
+        }
+    ],
+    "proyectos":[
+        {
+            "institucion":"Argentina Programa",
+            "fecha":2022,
+            "nombre":"Portfolio"
+        }
+    ]
+}

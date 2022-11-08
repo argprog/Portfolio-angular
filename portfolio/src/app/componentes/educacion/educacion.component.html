@@ -1,15 +1,9 @@
 <section class="educacion">
     <h5>Educación</h5>
     <ul class="list-group">
-      <li class="list-group-item">
-        <img class="logoeducacion" src="assets\Images\upv.png" alt="logoupv">
-        <p>Especialista en Innovación Empresarial</p>
-        <small>2022</small> <br>
-      </li>
-      <li class="list-group-item">
-        <img class="logoeducacion" src="assets\Images\unlam.jpg" alt="logounlam">
-        <p>Licenciada en Relaciones Laborales</p>
-        <small>2021</small> <br>
+      <li class="list-group-item" *ngFor = "let educacion of educacionLista"> 
+        <p>{{educacion.institucion}}</p> 
+        <small>{{educacion.fecha}}: {{educacion.titulo}}</small>
       </li>
     </ul>
   </section>
