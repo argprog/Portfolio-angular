@@ -6,3 +6,8 @@
     text-align: center;
     margin: 30px;
 }
+
+.progress, p{
+    width: 50%;
+    margin-left: 40%;
+}

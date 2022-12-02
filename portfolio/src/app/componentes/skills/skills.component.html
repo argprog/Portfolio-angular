@@ -1,20 +1,28 @@
 <section class="hard & soft skills">
-    <h5>Hard & Soft Skills</h5>
-    <div class="containerhard">
-      <div class="row row-cols-6 row-cols-md- g-">
-        <div class="col" *ngFor="let skill of skillsLista">
-          <div class="card">
-            <i class="fa-brands {{skill.icono}} fa-2x"></i>
-            <div class="card-body">
-              <h5 class="card-title">{{skill.nombre}}</h5>
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: 50%;"
-                  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">{{skill.porcentaje}}
-                </div>
-              </div>
-            </div>
-          </div>
+  <div class="row">
+    <div class="col-3">
+      <h5>Hard & Soft Skills</h5> 
+    </div>
+    <div class="col-3 justify-content-end">
+      <div class="btn-group" role="group" aria-label="Basic outlined example">
+        <button type="button" class="btn btn-outline-secondary btn-sm"><i class="fa-solid fa-plus"></i></button>
+        <button type="button" class="btn btn-outline-secondary btn-sm"><i class="fa-solid fa-pencil"></i></button>
+        <button type="button" class="btn btn-outline-secondary btn-sm"><i class="fa-solid fa-trash"></i></button>
+      </div>
+    </div> 
+  </div> 
+
+  <div class="container">
+    <div class="row justify-content-start" *ngFor="let skill of skillsLista">
+      <div class="col-4">
+        <p>{{skill.nombre}}</p>
+      </div>
+      <div class="col-4">
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
         </div>
       </div>
     </div>
-  </section>
+  
+</div>
+</section>

@@ -1,6 +1,17 @@
 <section class="idiomas">
-    <h5>Idiomas</h5>
-    <ul class="list-group list-group-horizontal">
+  <div class="row">
+    <div class="col-3">
+      <h5>Idiomas</h5> 
+    </div>
+    <div class="col-3 justify-content-end">
+      <div class="btn-group" role="group" aria-label="Basic outlined example">
+        <button type="button" class="btn btn-outline-secondary btn-sm"><i class="fa-solid fa-plus"></i></button>
+        <button type="button" class="btn btn-outline-secondary btn-sm"><i class="fa-solid fa-pencil"></i></button>
+        <button type="button" class="btn btn-outline-secondary btn-sm"><i class="fa-solid fa-trash"></i></button>
+      </div>
+    </div> 
+  </div>
+    <ul class="list-group">
       <li class="list-group-item" *ngFor="let idiomas of idiomasLista">
         <p>{{idiomas.nombre}} {{idiomas.nivel}}</p>
       </li>
