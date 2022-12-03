@@ -14,6 +14,8 @@ import { PortfolioService } from './servicios/portfolio.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './componentes/login/login.component';
+import { IndexComponent } from './componentes/index/index.component';
+import { ErrorComponent } from './componentes/error/error.component';
 
 
 @NgModule({
@@ -28,6 +30,8 @@ import { LoginComponent } from './componentes/login/login.component';
     ProjectsComponent,
     FooterComponent,
     LoginComponent,
+    IndexComponent,
+    ErrorComponent,
    
   ],
   imports: [
