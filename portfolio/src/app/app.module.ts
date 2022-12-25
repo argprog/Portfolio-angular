@@ -11,11 +11,12 @@ import { SkillsComponent } from './componentes/skills/skills.component';
 import { ProjectsComponent } from './componentes/projects/projects.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { PortfolioService } from './servicios/portfolio.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './componentes/login/login.component';
 import { IndexComponent } from './componentes/index/index.component';
 import { ErrorComponent } from './componentes/error/error.component';
+import { InterceptorService } from './servicios/interceptor.service';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { ErrorComponent } from './componentes/error/error.component';
     HttpClientModule,
     AppRoutingModule,
   ],
-  providers: [PortfolioService],
+  providers: [PortfolioService,
+  {provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

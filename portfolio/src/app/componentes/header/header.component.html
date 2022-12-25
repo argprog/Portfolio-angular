@@ -1,23 +1,30 @@
 <header>
-    <section class="banner">
-      <nav class="navbar">
-        <div class="container-fluid">
-          <img src="assets\Images\APLogo.png" alt="logo" class="logo">
-          <ul class="d-flex list-group list-group-horizontal">
-            <li class="list-group-item"><a href="https://github.com/argprog/Portfolio-FrontEnd.git" target="_blank"><i
-                  class="fa-brands fa-github fa-2x"></i></a></li>
-            <li class="list-group-item"><a href="https://www.linkedin.com/in/lauradanielaalvarez" target="_blank"><i
-                  class="fa-brands fa-linkedin-in fa-2x"></i></a></li>
-            <li class="list-group-item">
+  <section class="banner">
+    <nav class="navbar">
+      <div class="container-fluid">
+        <img src="assets\Images\APLogo.png" alt="logo" class="logo">
+        <ul class="d-flex list-group list-group-horizontal">
+          <li class="list-group-item"><a href="https://github.com/argprog/Portfolio-FrontEnd.git" target="_blank"><i
+                class="fa-brands fa-github fa-2x"></i></a></li>
+          <li class="list-group-item"><a href="https://www.linkedin.com/in/lauradanielaalvarez" target="_blank"><i
+                class="fa-brands fa-linkedin-in fa-2x"></i></a></li>
+          <!-- Botones para login y logout Paz-->   
+          <!-- <li class="nav-item user" *ngIf="!isLogged"><i class="fa fa-user" type="button" data-bs-toggle="modal"
+              data-bs-target="#login" class="fa-solid fa-user-lock fa-2x" a routerLink="/login"></i>
+          </li>
+          <li class="user-admin" (click)="notLogged()" *ngIf="isLogged"><i class="fa fa-user icono-user-admin"
+              type="button"></i>
+          </li> -->
+          <li class="list-group-item">
               <i type="button" data-bs-toggle="modal" data-bs-target="#login"
                 class="fa-solid fa-user-lock fa-2x" a routerLink="/login"></i>
             </li>
             <li class="list-group-item">
               <i type="button"  data-bs-toggle="modal" data-bs-target="#app-login"
                 class="fa-solid fa-right-from-bracket fa-2x" a routerLink=""></i>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </section>
-  </header>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </section>
+</header>
