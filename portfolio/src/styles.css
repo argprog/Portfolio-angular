@@ -42,5 +42,12 @@ p{
 }
 
 .formulario{
-    margin: 15%;
+    margin-top: 2%;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 2%;
+    padding: 5%;
+    border:solid;
+    border-color: gray;
+
 }

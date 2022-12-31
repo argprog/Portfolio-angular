@@ -11,12 +11,12 @@ import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
  export class LoginComponent implements OnInit {
 
   form:FormGroup;
-   
+  
   constructor(private formBuilder:FormBuilder, private autenticacionService:AutenticacionService, private ruta:Router) {
     this.form=this.formBuilder.group(
       {
         email:['', [Validators.required,Validators.email]],
-        password:['', [Validators.required,Validators.minLength(8)]],
+        clave:['', [Validators.required,Validators.minLength(4)]],
       }
     )}
   
@@ -28,17 +28,18 @@ import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
     return this.form.get('email');
    }
 
-   get Password()
+   get Clave()
    {
-    return this.form.get('password');
+    return this.form.get('clave');
    }
 
    onEnviar(event:Event){
     event.preventDefault;
-    this.autenticacionService.IniciarSesion(this.form.value).subscribe(data=>{
+    this.autenticacionService.loginPersona(this.form.value).subscribe(data=>{
       console.log("DATA:" + JSON.stringify(data));
-      this.ruta.navigate(['/index']);
-    })
+          })
+          this.ruta.navigate(['/']);
+          //window.location.reload();
    }
   }
  

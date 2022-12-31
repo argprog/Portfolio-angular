@@ -17,6 +17,7 @@ import { LoginComponent } from './componentes/login/login.component';
 import { IndexComponent } from './componentes/index/index.component';
 import { ErrorComponent } from './componentes/error/error.component';
 import { InterceptorService } from './servicios/interceptor.service';
+import { EditarAcercadeComponent } from './modales/editar-acercade/editar-acercade.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { InterceptorService } from './servicios/interceptor.service';
     LoginComponent,
     IndexComponent,
     ErrorComponent,
+    EditarAcercadeComponent,
    
   ],
   imports: [

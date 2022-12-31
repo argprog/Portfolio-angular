@@ -15,12 +15,12 @@
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Password</label>
       <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1">
-      <div *ngIf="Password?.errors && Password?.touched">
-        <p *ngIf="Password?.hasError('required')" class="text-danger" role="alert">
+      <div *ngIf="Clave?.errors && Clave?.touched">
+        <p *ngIf="Clave?.hasError('required')" class="text-danger" role="alert">
           La contraseña es requerida.
         </p>
-        <p *ngIf="Password?.errors" class="text-danger" role="alert">
-          La contraseña debe tener 8 o más caracteres.
+        <p *ngIf="Clave?.errors" class="text-danger" role="alert">
+          La contraseña debe tener 4 o más caracteres.
         </p>
       </div>
     </div>
