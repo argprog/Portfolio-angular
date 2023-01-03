@@ -18,6 +18,8 @@ import { IndexComponent } from './componentes/index/index.component';
 import { ErrorComponent } from './componentes/error/error.component';
 import { InterceptorService } from './servicios/interceptor.service';
 import { EditarAcercadeComponent } from './modales/editar-acercade/editar-acercade.component';
+import { NuevaExperienciaComponent } from './modales/nueva-experiencia/nueva-experiencia.component';
+import { EditarExperienciaComponent } from './modales/editar-experiencia/editar-experiencia.component';
 
 
 @NgModule({
@@ -35,6 +37,8 @@ import { EditarAcercadeComponent } from './modales/editar-acercade/editar-acerca
     IndexComponent,
     ErrorComponent,
     EditarAcercadeComponent,
+    NuevaExperienciaComponent,
+    EditarExperienciaComponent,
    
   ],
   imports: [

@@ -12,9 +12,9 @@ export class AcercadeComponent implements OnInit {
   constructor(private datosPortfolio:PortfolioService) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data =>{
+    this.datosPortfolio.obtenerDato(1).subscribe(data =>{
       console.log(data);
-      this.miPortfolio=data[0];
+      this.miPortfolio=data;
     });
   }
 

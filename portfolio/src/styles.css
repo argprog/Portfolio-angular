@@ -2,16 +2,15 @@
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-.col-5,.col-6{
-    padding: 5%;
-    text-align: center; 
-}
-
 h1, h2, h3, h5{
     color:rgb(71, 69, 69);
-    margin-top: 8%;
-    margin-left: 25%;
-    text-align: left;
+}
+
+.container-titulo{
+    margin-top: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 3%;
 }
 
 p{
@@ -34,11 +33,6 @@ p{
 .educacion, .experiencia, .idiomas, .projects, .skills, .acercade {
     border: 1px solid grey
   
-}
-
-.btn-group{
-    margin-top: 5%;
-    margin-left: 230%;
 }
 
 .formulario{

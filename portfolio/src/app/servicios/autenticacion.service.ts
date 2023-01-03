@@ -19,7 +19,7 @@ sessionStorage:any;
       loginPersona(credenciales:any):Observable<any>{
         var httpOptions={
           headers:new HttpHeaders({
-            'Content-Type':'aplication/json'
+            'Content-Type':'application/json'
           }),
         }
         return this.http.post<any>(this.url, credenciales, httpOptions).pipe(map(data=>{

@@ -3,32 +3,64 @@
     <h5>Acerca de</h5>
     <div class="mb-3">
       <label for="id" class="form-label"></label>
-      <input type="hidden" class="form-control" id="id">
+      <input  [ngModel]="persona.id" type="hidden" formControlName="id" class="form-control">
     </div>
     <div class="mb-3">
       <label for="nombre" class="form-label">Nombre</label>
-      <input type="text" class="form-control" id="nombre">
+      <input type="text" formControlName="nombre" class="form-control"     [ngModel]="persona.nombre" [ngClass]="{'is-invalid': Nombre.errors && Nombre.touched,'is-valid':!Nombre.errors && Nombre.touched}">
+      <div *ngIf="Nombre.errors && Nombre.touched"> 
+      <p *ngIf="Nombre.hasError('required')" class="text-danger" role="alert">
+        El nombre es requerido
+      </p>
+    </div>
     </div>
     <div class="mb-3">
       <label for="apellido" class="form-label">Apellido</label>
-      <input type="text" class="form-control" id="apellido">
+      <input type="text" formControlName="apellido" class="form-control"   [ngModel]="persona.apellido" [ngClass]="{'is-invalid': Apellido.errors && Apellido.touched,'is-valid':!Apellido.errors && Apellido.touched}">
+      <div *ngIf="Apellido.errors && Apellido.touched"> 
+      <p *ngIf="Apellido.hasError('required')" class="text-danger" role="alert">
+        El apellido es requerido
+      </p>
     </div>
+  </div>
     <div class="mb-3">
         <label for="certificacion" class="form-label">Certificación</label>
-        <input type="text" class="form-control" id="certificacion">
+        <input type="text" formControlName="certificacion" class="form-control" [ngModel]="persona.certificacion" [ngClass]="{'is-invalid': Certificacion.errors && Certificacion.touched,'is-valid':!Certificacion.errors && Certificacion.touched}">
+      <div *ngIf="Certificacion.errors && Certificacion.touched"> 
+      <p *ngIf="Certificacion.hasError('required')" class="text-danger" role="alert">
+        La certificación es requerida
+      </p>
       </div>
+    </div>
       <div class="mb-3">
         <label for="profesion" class="form-label">Profesión</label>
-        <input type="text" class="form-control" id="profesion">
+        <input type="text" formControlName="profesion"class="form-control"  [ngModel]="persona.profesion" [ngClass]="{'is-invalid': Profesion.errors && Profesion.touched,'is-valid':!Profesion.errors && Profesion.touched}">
+      <div *ngIf="Profesion.errors && Profesion.touched"> 
+      <p *ngIf="Profesion.hasError('required')" class="text-danger" role="alert">
+        La profesión es requerida
+      </p>
       </div>
+       </div>
       <div class="mb-3">
         <label for="correo_electronico" class="form-label">Correo electrónico</label>
-        <input type="text" class="form-control" id="correo_electronico">
+        <input type="text" formControlName="correo_electronico" class="form-control" [ngModel]="persona.correo_electronico" [ngClass]="{'is-invalid': Correo_electronico.errors && Correo_electronico.touched,'is-valid':!Correo_electronico.errors && Correo_electronico.touched}">
+      <div *ngIf="Correo_electronico.errors && Correo_electronico.touched"> 
+      <p *ngIf="Correo_electronico.hasError('required')" class="text-danger" role="alert">
+        El correo electrónico es requerido
+      </p>
       </div>
+    </div>
       <div class="mb-3">
         <label for="telefono" class="form-label">Teléfono</label>
-        <input type="text" class="form-control" id="telefono">
+        <input type="text" formControlName="telefono" class="form-control" [ngModel]="persona.telefono" [ngClass]="{'is-invalid': Telefono.errors && Telefono.touched,'is-valid':!Telefono.errors && Telefono.touched}">
+      <div *ngIf="Telefono.errors && Telefono.touched"> 
+      <p *ngIf="Telefono.hasError('required')" class="text-danger" role="alert">
+        El teléfono es requerido
+      </p>
       </div>
+    </div>
+    <div>
     <button type="submit" class="btn btn-secondary">Guardar</button>
   </div>
-  </form>
+</div>
+</form>

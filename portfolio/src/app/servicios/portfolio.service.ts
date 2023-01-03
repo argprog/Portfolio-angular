@@ -11,15 +11,19 @@ url:string="http://localhost:8080";
   constructor(private http:HttpClient) { }
 
   public obtenerDatos():Observable<any>{
-    return this.http.get<any>(this.url + "/personas/traer");
+    return this.http.get<any>(this.url + '/personas/traer');
+  }
+
+  public obtenerDato(id:number):Observable<any>{
+    return this.http.get<any>(this.url + `/personas/traer/${id}`);
   }
 
   public editarPersona(perso:Persona):Observable<any>{
-    return this.http.put<any>(this.url + "/personas/editar",perso);
+    return this.http.put<any>(this.url + '/personas/editar', perso);
   }
   //crear un servicio por cada entidad
 
-  //en acerca de va solo obtener y modificar
+  //en acerca de va solo obtener y modificar.
 
   //editaracercadts  crear form builder, inyectar constructor, router y activate route si
 

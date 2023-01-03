@@ -12,7 +12,7 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
 export class EditarAcercadeComponent implements OnInit {
 
 form:FormGroup;
-perso:Persona | undefined;
+persona: Persona;
 
   constructor(private formBuilder:FormBuilder,
               private miPortfolio:PortfolioService,
@@ -32,9 +32,10 @@ perso:Persona | undefined;
 
   ngOnInit(): void {
     const id=this.activatedRoute.snapshot.params['id'];
-    this.miPortfolio.obtenerDatos().subscribe(data=>{
-      this.perso=data;
-    },err=>{
+    this.miPortfolio.obtenerDato(id).subscribe(data=>{
+      this.persona=data;
+      
+    },error=>{
     alert("Error en la carga de datos");
     this.router.navigate(['']);
     }
@@ -62,8 +63,7 @@ perso:Persona | undefined;
 
   onUpdate():void{
     this.miPortfolio.editarPersona(this.form.value).subscribe(data=>{
-      alert ("Datos modificados");
-      this.router.navigate(['']);
+      console.log(this.form.value);
     })
   }
 
@@ -71,6 +71,8 @@ perso:Persona | undefined;
     event.preventDefault;
     if (this.form.valid){
       this.onUpdate();
+      alert ("Moficado ok");
+      this.router.navigate(['']);
     }else{
       alert ("Falló la carga. Intente nuevamente.");
       this.form.markAllAsTouched();

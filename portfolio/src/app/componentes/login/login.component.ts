@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Persona } from 'src/app/entidades/persona';
 import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 
 @Component({
@@ -11,32 +12,29 @@ import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
  export class LoginComponent implements OnInit {
 
   form:FormGroup;
-  
-  constructor(private formBuilder:FormBuilder, private autenticacionService:AutenticacionService, private ruta:Router) {
+  persona:Persona=new Persona("","","","","","");
+    constructor(private formBuilder:FormBuilder, private autenticacionService:AutenticacionService, 
+    private ruta:Router) {
     this.form=this.formBuilder.group(
       {
-        email:['', [Validators.required,Validators.email]],
-        clave:['', [Validators.required,Validators.minLength(4)]],
+        // email:['', [Validators.required,Validators.email]],
+        // clave:['', [Validators.required,Validators.minLength(4)]],
       }
     )}
-  
-    ngOnInit(): void {
+      ngOnInit(): void {
    }
-
-   get Email()
-   {
-    return this.form.get('email');
-   }
-
-   get Clave()
-   {
-    return this.form.get('clave');
-   }
-
+  //  get Email()
+  //  {
+  //   return this.form.get('email');
+  //  }
+  //  get Clave()
+  //  {
+  //   return this.form.get('clave');
+  //  }
    onEnviar(event:Event){
     event.preventDefault;
     this.autenticacionService.loginPersona(this.form.value).subscribe(data=>{
-      console.log("DATA:" + JSON.stringify(data));
+      //console.log("DATA:" + JSON.stringify(data));
           })
           this.ruta.navigate(['/']);
           //window.location.reload();

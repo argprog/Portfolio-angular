@@ -1,0 +1,42 @@
+<form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+    <div class="formulario">
+    <h5>Agregar Experiencia</h5>
+    <div class="mb-3">
+      <label for="empresa" class="form-label">Empresa</label>
+      <input type="text" class="form-control" id="empresa" formControlName="empresa" >
+      <div *ngIf="Empresa.errors && Empresa.touched"> 
+        <p *ngIf="Empresa.hasError('required')" class="text-danger" role="alert">
+          La Empresa es requerida
+        </p>
+      </div>
+    </div>
+    <div class="mb-3">
+        <label for="fecha_inicio" class="form-label">Fecha de inicio</label>
+        <input type="text" class="form-control" id="fecha_inicio" formControlName="fecha_inicio" >
+        <div *ngIf="Fecha_inicio.errors && Fecha_inicio.touched"> 
+          <p *ngIf="Fecha_inicio.hasError('required')" class="text-danger" role="alert">
+            La fecha de inicio es requerida
+          </p>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="fecha_fin" class="form-label">Fecha de fin</label>
+        <input type="text" class="form-control" id="fecha_fin" formControlName="fecha_fin" >
+        <div *ngIf="Fecha_fin.errors && Fecha_fin.touched"> 
+          <p *ngIf="Fecha_fin.hasError('required')" class="text-danger" role="alert">
+           La fecha de fin es requerida
+          </p>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="puesto" class="form-label">Puesto</label>
+        <input type="text" class="form-control" id="puesto" formControlName="puesto" >
+        <div *ngIf="Puesto.errors && Puesto.touched"> 
+          <p *ngIf="Puesto.hasError('required')" class="text-danger" role="alert">
+            El puesto es requerido
+          </p>
+        </div>
+      </div>
+    <button type="submit" class="btn btn-secondary">Agregar</button>
+    </div>
+  </form>

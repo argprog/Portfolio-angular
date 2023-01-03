@@ -1,20 +1,34 @@
 <section class="educacion">
-  <div class="row">
-    <div class="col-3">
-      <h5>Educación</h5> 
-    </div>
-    <div class="col-3 justify-content-end">
-      <div class="btn-group" role="group" aria-label="Basic outlined example">
-        <button type="button" class="btn btn-outline-secondary btn-sm"><i class="fa-solid fa-plus"></i></button>
-        <button type="button" class="btn btn-outline-secondary btn-sm"><i class="fa-solid fa-pencil"></i></button>
-        <button type="button" class="btn btn-outline-secondary btn-sm"><i class="fa-solid fa-trash"></i></button>
+  <div class="container-titulo">
+    <div class="row">
+      <div class="col-9">
+        <h5>Educación</h5> 
       </div>
-    </div> 
+      <div class="col-3 text-center">
+        <div class="btn-group">
+          <button type="button" class="btn btn-outline-secondary btn-sm" routerLink="/educacion/crear">Nueva Educación</button>
+          <!-- *ngIf="isLogged" falta agregar en el boton de agregar-->
+          </div>
+      </div> 
   </div>
-    <ul class="list-group">
-      <li class="list-group-item" *ngFor = "let educacion of educacionLista"> 
-        <p>{{educacion.institucion}}</p> 
-        <small>{{educacion.fecha}}: {{educacion.titulo}}</small>
-      </li>
-    </ul>
+</div>
+  <div class="container text-center">
+    <div class="row" *ngFor="let educacion of edu">
+      <div class="col-2">
+      <p small class="text-muted">{{educacion.fecha}}</p>
+      </div>
+     <div class="col-4">
+        <p small class="text-muted">{{educacion.institucion}}</p>
+      </div>
+      <div class="col-4">
+        <p small class="text-muted">{{educacion.titulo}}</p>
+      </div>
+      <div class="col-2">
+        <button type="button" class="btn btn-outline-secondary btn-sm" routerLink="/editar-educacion/{{educacion.id}}"><i class="fa-solid fa-pencil"></i></button>
+        <button type="button" class="btn btn-outline-secondary btn-sm" (click)="borrar(educacion.id)"><i class="fa-solid fa-trash"></i></button>
+        <!-- *ngIf="isLogged" falta agregar en el boton de agregar-->
+      </div>
+    </div>
+  </div>
   </section>
+

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/servicios/portfolio.service';
+import { Idiomas } from 'src/app/entidades/idiomas';
+import { SIdiomassService } from 'src/app/servicios/s-idiomas.service';
 
 @Component({
   selector: 'app-idiomas',
@@ -7,15 +8,38 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
   styleUrls: ['./idiomas.component.css']
 })
 export class IdiomasComponent implements OnInit {
-  idiomasLista:any;
+idiom: Idiomas[]=[];
 
-  constructor(private datosPortfolio:PortfolioService) { }
+  constructor(private sIdiomas:SIdiomassService) { }
+
+  isLogged= false;
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data =>{
-      console.log(data);
-      this.idiomasLista=data.idiomas;
-    });
+
+    this.sIdiomas.lista().subscribe(data => {this.idiom = data});
+
+  // this.cargarIdiomas();
+  //   if (this.autenticacionService.usuarioAutenticado()) {
+  //     this.isLogged = true;
+  //   } else {
+  //     this.isLogged = false;
+  //   }
   }
 
+  cargarIdiomas(): void {
+    this.sIdiomas.lista().subscribe(data => {this.idiom = data});
+  }
+
+  borrarIdiomas(id?: number){
+    if(id != undefined){
+      this.sIdiomas.borrarIdiomas(id).subscribe(
+        data => {
+          this.cargarIdiomas();
+        }, err => {
+          alert("No se pudo borrar el idioma");
+        }
+      )
+    }
+  }
 }
+
