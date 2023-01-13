@@ -1,5 +1,17 @@
 *{
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    /* Por debajo de 700px */
+    @media screen and (max-width: 700px){
+    body{
+    font-size:10px;
+    }
+    }
+    /* Por debajo de 400px */
+    @media screen and (max-width: 400px){
+    body{
+    font-size:10px;
+    }
+    }
 }
 
 h1, h2, h3, h5{
@@ -30,7 +42,7 @@ p{
     background-color: transparent;
 }
 
-.educacion, .experiencia, .idiomas, .projects, .skills, .acercade {
+.educacion, .experiencia, .idiomas, .skills, .acercade, .proyecto {
     border: 1px solid grey
   
 }

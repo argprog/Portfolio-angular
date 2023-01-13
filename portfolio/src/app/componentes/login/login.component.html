@@ -1,65 +1,26 @@
-<!-- ver si ? en ngClass está bien. En word no está -->
-<!-- <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
-    <div class="formulario">
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
-      <input type="email" formControlName="email" class="form-control" id="email" 
-    [(ngModel)]="persona.email" [ngClass]="{'is-invalid': Email?.errors && Email?.touched,'is-valid':!Email?.errors && Email?.touched}">
-      <div *ngIf="Email?.errors && Email?.touched"> 
-      <p *ngIf="Email?.hasError('required')" class="text-danger" role="alert">
-        El email es requerido
-      </p>
-      <p *ngIf="Email?.hasError('email')" class="text-danger" role="alert">
-        El formato del email debe ser válido.
+<form class="formulario" [formGroup]="form" (ngSubmit)="onLogin()" novalidate>
+  <h3>Iniciar sesión</h3>
+  <div class="mb-3">
+    <label for="nombreUsuario" class="form-label"></label>
+    <input type="text" class="form-control" id="nombreUsuario" formControlName="nombreUsuario"
+      aria-describedby="Usuario" required [(ngModel)]="nombreUsuario" placeholder="Usuario"
+      [ngClass]="{'is-invalid': Nombre.errors && Nombre.touched, 'is-valid': !Nombre.errors && Nombre.touched}">
+    <div *ngIf="Nombre.errors && Nombre.touched">
+      <p *ngIf="Nombre.hasError('required')" class="text-danger">
+        El usuario es requerido.
       </p>
     </div>
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label"></label>
+    <input type="password" class="form-control" id="password" formControlName="password" required [(ngModel)]="password"
+      placeholder="Password"
+      [ngClass]="{'is-invalid': Password.errors && Password.touched, 'is-valid': !Password.errors && Password.touched}">
+    <div *ngIf="Password.errors && Password.touched">
+      <p *ngIf="Password.hasError('required')" class="text-danger">
+        La contraseña es requerida.
+      </p>
     </div>
-    <div class="mb-3">
-      <label for="InputPassword" class="form-label">Password</label>
-      <input type="password" formControlName="clave" class="form-control" id="clave"
-      [(ngModel)]="persona.clave" [ngClass]="{'is-invalid': Clave?.errors && Clave?.touched,'is-valid':!Clave?.errors && Clave?.touched}">
-      <div *ngIf="Clave?.errors && Clave?.touched">
-        <p *ngIf="Clave?.hasError('required')" class="text-danger" role="alert">
-          La contraseña es requerida.
-        </p>
-        <p *ngIf="Clave?.hasError('minLength')" class="text-danger" role="alert">
-          La contraseña debe tener 4 o más caracteres.
-        </p>
-      </div>
-    </div>
-    <button type="submit" class="btn btn-secondary">Ingresar</button>
-    </div>
-  </form> --> 
-
-  <!-- <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="row justify-content-center mb-4">
-    <div class="col-sm-10">
-      <div>
-        <label for="user"></label>
-        <input class="form-control text-center mb-2" type="text" placeholder="Ingrese su usuario" id="user"
-          name="user" formControlName="nombreUsuario">
-      </div>
-
-      <div *ngIf="Usuario?.errors && Usuario?.touched">
-        <div *ngIf="Usuario?.hasError('required')" class="alert alert-danger" role="alert">
-          Debe ingresar su nombre de usuario
-        </div>
-      </div>
-
-      <div>
-        <label for="userPassword"></label>
-        <input class="form-control text-center mb-2" type="password" id="inputPassword"
-          placeholder="Ingrese su clave" id="userPassword" name="userPassword" formControlName="password">
-      </div>
-
-      <div *ngIf="Password?.errors && Password?.touched">
-        <div *ngIf="Password?.hasError('required')" class="alert alert-danger" role="alert">
-          Debe ingresar la contraseña
-        </div>
-      </div>
-    </div>
-
-    <div class="modal-footer mt-4 justify-content-center">
-      <button type="submit" [disabled]="Usuario?.hasError('required') || Password?.hasError('required')"
-        class="btn text-center" data-bs-dismiss="modal">Ingresar</button>
-    </div>
-  </form>-->
+  </div>
+  <button class="btn btn-secondary" type="submit">Ingresar</button>
+</form>

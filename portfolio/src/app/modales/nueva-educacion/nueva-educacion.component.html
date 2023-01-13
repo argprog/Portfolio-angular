@@ -1,0 +1,34 @@
+<form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+    <div class="formulario">
+    <h5>Agregar Educacion</h5>
+    <div class="mb-3">
+      <label for="institucion" class="form-label">Institucion</label>
+      <input type="text" class="form-control" id="institucion" formControlName="institucion" >
+      <div *ngIf="Institucion.errors && Institucion.touched"> 
+        <p *ngIf="Institucion.hasError('required')" class="text-danger" role="alert">
+          La institucion es requerida
+        </p>
+      </div>
+    </div>
+    <div class="mb-3">
+        <label for="fecha" class="form-label">Fecha</label>
+        <input type="text" class="form-control" id="fecha" formControlName="fecha" >
+        <div *ngIf="Fecha.errors && Fecha.touched"> 
+          <p *ngIf="Fecha.hasError('required')" class="text-danger" role="alert">
+            La fecha es requerida
+          </p>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="titulo" class="form-label">Título</label>
+        <input type="text" class="form-control" id="titulo" formControlName="titulo" >
+        <div *ngIf="Titulo.errors && Titulo.touched"> 
+          <p *ngIf="Titulo.hasError('required')" class="text-danger" role="alert">
+           El título es requerido
+          </p>
+        </div>
+      </div>
+    <button type="submit" class="btn btn-secondary">Agregar</button>
+    </div>
+  </form>
+

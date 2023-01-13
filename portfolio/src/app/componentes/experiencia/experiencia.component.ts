@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Experiencia } from 'src/app/entidades/experiencia';
-import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { SExperienciaService } from 'src/app/servicios/s-experiencia.service';
 
 @Component({
@@ -11,7 +10,7 @@ import { SExperienciaService } from 'src/app/servicios/s-experiencia.service';
 export class ExperienciaComponent implements OnInit {
   expe: Experiencia[]=[];
 
-  constructor(private sExperiencia:SExperienciaService, private autenticacionService:AutenticacionService) { }
+  constructor(private sExperiencia:SExperienciaService) { }
 
   isLogged= false;
 

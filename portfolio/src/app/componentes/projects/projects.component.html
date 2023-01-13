@@ -1,22 +1,35 @@
-<section class="projects">
-    <div class="proyectos">
-      <div class="row">
-        <div class="col-3">
-          <h5>Proyectos</h5> 
-        </div>
-        <div class="col-3 justify-content-end">
-          <div class="btn-group" role="group" aria-label="Basic outlined example">
-            <button type="button" class="btn btn-outline-secondary btn-sm"><i class="fa-solid fa-plus"></i></button>
-            <button type="button" class="btn btn-outline-secondary btn-sm"><i class="fa-solid fa-pencil"></i></button>
-            <button type="button" class="btn btn-outline-secondary btn-sm"><i class="fa-solid fa-trash"></i></button>
-          </div>
-        </div> 
+<section class="proyecto">
+  <div class="container-titulo">
+    <div class="row">
+      <div class="col-9">
+        <h5>Proyectos</h5> 
       </div>
-      <ul class="list-group list-group-horizontal">
-        <li class="list-group-item" *ngFor="let proyectos of proyectosLista">
-          <p>{{proyectos.institucion}}</p>
-          <small>{{proyectos.fecha}}: {{proyectos.nombre}}</small>
-        </li>
-      </ul>
+      <div class="col-3 text-center">
+        <div class="btn-group">
+          <button type="button" class="btn btn-outline-secondary btn-sm" routerLink="/proyectos/crear">Nuevo proyecto</button>
+          <!-- *ngIf="isLogged" falta agregar en el boton de agregar-->
+          </div>
+      </div> 
+  </div>
+</div>
+  <div class="container text-center">
+    <div class="row" *ngFor="let Proyecto of proye">
+      <div class="col-2">
+      <p small class="text-muted">{{Proyecto.fecha}}</p>
+      </div>
+     <div class="col-4">
+        <p small class="text-muted">{{Proyecto.institucion}}</p>
+      </div>
+      <div class="col-4">
+        <p small class="text-muted">{{Proyecto.nombre}}</p>
+      </div>
+      <div class="col-2">
+        <button type="button" class="btn btn-outline-secondary btn-sm" routerLink="/editar-proyectos/{{Proyecto.id}}"><i class="fa-solid fa-pencil"></i></button>
+        <button type="button" class="btn btn-outline-secondary btn-sm" (click)="borrar(Proyecto.id)"><i class="fa-solid fa-trash"></i></button>
+        <!-- *ngIf="isLogged" falta agregar en el boton de agregar-->
+      </div>
     </div>
+  </div>
   </section>
+
+

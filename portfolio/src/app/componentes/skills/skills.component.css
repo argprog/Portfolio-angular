@@ -1,13 +1,4 @@
-.containerhard{
-    text-align: center;
-    margin: 30px;
-}
-.containersoft{
-    text-align: center;
-    margin: 30px;
-}
-
-.progress, p{
-    width: 50%;
-    margin-left: 40%;
+p{
+    margin-left: 30%;
+    color:rgb(71, 69, 69);
 }

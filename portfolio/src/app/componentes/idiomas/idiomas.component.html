@@ -6,7 +6,7 @@
       </div>
       <div class="col-3 text-center">
         <div class="btn-group">
-          <button type="button" class="btn btn-outline-secondary btn-sm" routerLink="/Idiomass/crear">Nuevo Idioma</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm" routerLink="/idiomas/crear">Nuevo Idioma</button>
           <!-- *ngIf="isLogged" falta agregar en el boton de agregar-->
           </div>
       </div> 
@@ -14,17 +14,16 @@
 </div>
   <div class="container text-center">
     <div class="row" *ngFor="let Idiomas of idiom">
-      <div class="col-2">
+      <div class="col-3">
       </div>
-     <div class="col-4">
-        <p small class="text-muted">{{Idiomas.nombre}}</p>
-      </div>
-      <div class="col-4">
-        <p small class="text-muted">{{Idiomas.nivel}}</p>
+     <div class="col-5">
+        <p small class="text-muted">{{Idiomas.nombre}} {{Idiomas.nivel}}</p>
       </div>
       <div class="col-2">
-        <button type="button" class="btn btn-outline-secondary btn-sm" routerLink="/editar-Idiomas/{{Idiomas.id}}"><i class="fa-solid fa-pencil"></i></button>
-        <button type="button" class="btn btn-outline-secondary btn-sm"><i class="fa-solid fa-trash" (click)="borrarIdiomas()"></i></button>
+      </div>
+      <div class="col-2">
+        <button type="button" class="btn btn-outline-secondary btn-sm" routerLink="/editar-idiomas/{{Idiomas.id}}"><i class="fa-solid fa-pencil"></i></button>
+        <button type="button" class="btn btn-outline-secondary btn-sm" (click)="borrar(Idiomas.id)"><i class="fa-solid fa-trash"></i></button>
         <!-- *ngIf="isLogged" falta agregar en el boton de agregar-->
       </div>
     </div>

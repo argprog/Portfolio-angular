@@ -1,0 +1,41 @@
+<form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+    <div class="formulario">
+    <h5>Editar Proyecto</h5>
+    <div class="mb-3">
+      <label for="id" class="form-label"></label>
+      <input  [ngModel]="proyecto.id" type="hidden" formControlName="id" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="institucion" class="form-label">Institución</label>
+      <input type="text" formControlName="institucion" class="form-control"     [ngModel]="proyecto.institucion" [ngClass]="{'is-invalid': Institucion.errors && Institucion.touched,'is-valid':!Institucion.errors && Institucion.touched}">
+      <div *ngIf="Institucion.errors && Institucion.touched"> 
+      <p *ngIf="Institucion.hasError('required')" class="text-danger" role="alert">
+        La institucion es requerida
+      </p>
+    </div>
+    </div>
+    <div class="mb-3">
+      <label for="fecha" class="form-label">Fecha</label>
+      <input type="text" formControlName="fecha" class="form-control"   [ngModel]="proyecto.fecha" [ngClass]="{'is-invalid': Fecha.errors && Fecha.touched,'is-valid':!Fecha.errors && Fecha.touched}">
+      <div *ngIf="Fecha.errors && Fecha.touched"> 
+      <p *ngIf="Fecha.hasError('required')" class="text-danger" role="alert">
+        La fecha es requerida
+      </p>
+    </div>
+  </div>
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" formControlName="nombre" class="form-control" [ngModel]="proyecto.nombre" [ngClass]="{'is-invalid': Nombre.errors && Nombre.touched,'is-valid':!Nombre.errors && Nombre.touched}">
+      <div *ngIf="Nombre.errors && Nombre.touched"> 
+      <p *ngIf="Nombre.hasError('required')" class="text-danger" role="alert">
+        El nombre es requerido
+      </p>
+      </div>
+    </div>
+    <div>
+    <button type="submit" class="btn btn-secondary">Guardar</button>
+  </div>
+  </div>
+  </form>
+  
+  

@@ -18,15 +18,15 @@ url="http://localhost:8080";
   public detail(id:number):Observable<Educacion>{
     return this.http.get<Educacion>(this.url + `/educacion/traer/${id}`);
   }
-  public crearEducacion(expe:Educacion):Observable<any>{
-    return this.http.post<any>(this.url + '/educacion/crear',Educacion);
+  public crearEducacion(edu:Educacion):Observable<any>{
+    return this.http.post<any>(this.url + '/educacion/crear',edu);
   }
 
-  public editarEducacion(expe:Educacion):Observable<any>{
-    return this.http.put<any>(this.url + '/educacions/editar', Educacion);
+  public editarEducacion(edu:Educacion):Observable<any>{
+    return this.http.put<any>(this.url + '/educacion/editar',edu);
   }
 
   public borrarEducacion(id:number):Observable<any>{
-    return this.http.delete<any>(this.url + `educacions/borrar/${id}`);
+    return this.http.delete<any>(this.url + `/educacion/borrar/${id}`);
   }
 }

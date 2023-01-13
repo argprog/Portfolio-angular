@@ -18,15 +18,15 @@ export class SIdiomassService {
   public detail(id:number):Observable<Idiomas>{
     return this.http.get<Idiomas>(this.url + `/idiomas/traer/${id}`);
   }
-  public crearIdiomas(expe:Idiomas):Observable<any>{
-    return this.http.post<any>(this.url + '/idiomas/crear',Idiomas);
+  public crearIdiomas(idiom:Idiomas):Observable<any>{
+    return this.http.post<any>(this.url + '/idiomas/crear',idiom);
   }
 
-  public editarIdiomas(expe:Idiomas):Observable<any>{
-    return this.http.put<any>(this.url + '/idiomas/editar', Idiomas);
+  public editarIdiomas(idiom:Idiomas):Observable<any>{
+    return this.http.put<any>(this.url + '/idiomas/editar', idiom);
   }
 
   public borrarIdiomas(id:number):Observable<any>{
-    return this.http.delete<any>(this.url + `idiomas/borrar/${id}`);
+    return this.http.delete<any>(this.url + `/idiomas/borrar/${id}`);
   }
 }

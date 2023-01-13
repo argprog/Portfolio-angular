@@ -1,0 +1,25 @@
+<form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+    <div class="formulario">
+    <h5>Agregar Habilidad</h5>
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Habilidad</label>
+      <input type="text" class="form-control" id="nombre" formControlName="nombre" >
+      <div *ngIf="Nombre.errors && Nombre.touched"> 
+        <p *ngIf="Nombre.hasError('required')" class="text-danger" role="alert">
+          La habilidad es requerida
+        </p>
+      </div>
+    </div>
+    <div class="mb-3">
+        <label for="porcentaje" class="form-label">Porcentaje</label>
+        <input type="text" class="form-control" id="porcentaje" formControlName="porcentaje" >
+        <div *ngIf="Porcentaje.errors && Porcentaje.touched"> 
+          <p *ngIf="Porcentaje.hasError('required')" class="text-danger" role="alert">
+            El porcentaje es requerido
+          </p>
+        </div>
+      </div>
+    <button type="submit" class="btn btn-secondary">Agregar</button>
+    </div>
+  </form>
+

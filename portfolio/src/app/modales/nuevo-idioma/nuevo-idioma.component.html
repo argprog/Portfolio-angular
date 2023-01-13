@@ -1,0 +1,25 @@
+<form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+    <div class="formulario">
+    <h5>Agregar Idioma</h5>
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="nombre" formControlName="nombre" >
+      <div *ngIf="Nombre.errors && Nombre.touched"> 
+        <p *ngIf="Nombre.hasError('required')" class="text-danger" role="alert">
+          El nombre es requerido
+        </p>
+      </div>
+    </div>
+    <div class="mb-3">
+        <label for="nivel" class="form-label">Nivel</label>
+        <input type="text" class="form-control" id="nivel" formControlName="nivel" >
+        <div *ngIf="Nivel.errors && Nivel.touched"> 
+          <p *ngIf="Nivel.hasError('required')" class="text-danger" role="alert">
+            El nivel es requerido
+          </p>
+        </div>
+      </div>
+    <button type="submit" class="btn btn-secondary">Agregar</button>
+    </div>
+  </form>
+

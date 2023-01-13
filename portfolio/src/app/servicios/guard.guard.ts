@@ -1,27 +1,23 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AutenticacionService } from './autenticacion.service';
+import { TokenService } from './token.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GuardGuard implements CanActivate {
-  constructor(private autenticacionService: AutenticacionService, private rutas:Router){}
+
+  constructor(private tokenService:TokenService, private router:Router){}
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    let currentUser=this.autenticacionService.usuarioAutenticado;
+      if (!this.tokenService.getToken()) {
+        return this.router.navigate(['/']).then(() => false);
+      }
     return true;
-    // if(currentUser && currentUser.id)
-    // {
-    //   return true;
-    // } else {
-    //   //this.rutas.navigate(['/login']);
-    //   return false;
-    // }
-      
   }
   
 }
+  

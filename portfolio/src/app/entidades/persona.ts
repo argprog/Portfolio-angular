@@ -9,7 +9,7 @@ export class Persona {
  
 
     constructor(nombre:string, apellido:string, certificacion:string, 
-        profesion:string, correo_electronico:string, telefono:string){
+        profesion:string, correo_electronico:string, telefono:string, email:string, clave:string){
             this.nombre=nombre;
             this.apellido=apellido;
             this.certificacion=certificacion;

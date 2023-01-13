@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/servicios/portfolio.service';
+import { Habilidad } from 'src/app/entidades/habilidad';
+import { Shabilidadeservice } from 'src/app/servicios/s-habilidad.service';
 
 @Component({
   selector: 'app-skills',
@@ -7,15 +8,40 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent implements OnInit {
-  skillsLista:any;
+  habi: Habilidad[]=[];
 
-  constructor(private datosPortfolio:PortfolioService) { }
+  constructor(private sHabilidad:Shabilidadeservice) { }
+
+  isLogged= false;
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data =>{
-      console.log(data);
-      this.skillsLista=data.skills;
-    });
+
+    this.sHabilidad.lista().subscribe(data => {this.habi = data});
+
+  // this.cargarHabilidad();
+  //   if (this.autenticacionService.usuarioAutenticado()) {
+  //     this.isLogged = true;
+  //   } else {
+  //     this.isLogged = false;
+  //   }
   }
 
+  cargarHabilidad(): void {
+    this.sHabilidad.lista().subscribe(data => {this.habi = data});
+  }
+
+  //por tema de versiones lo tuve que hacer de este modo
+  borrar(id: number){
+    // if(id != undefined){
+      this.sHabilidad.borrarHabilidad(id).subscribe(
+        data => {
+          alert("No se pudo eliminar la Habilidad");
+        }
+        , err => {
+         alert("Habilidad eliminada");
+         this.cargarHabilidad();
+       }
+      )
+    // }
+  }
 }

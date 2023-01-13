@@ -30,16 +30,19 @@ idiom: Idiomas[]=[];
     this.sIdiomas.lista().subscribe(data => {this.idiom = data});
   }
 
-  borrarIdiomas(id?: number){
-    if(id != undefined){
+  //por tema de versiones lo tuve que hacer de este modo
+  borrar(id: number){
+    // if(id != undefined){
       this.sIdiomas.borrarIdiomas(id).subscribe(
         data => {
-          this.cargarIdiomas();
-        }, err => {
-          alert("No se pudo borrar el idioma");
+          alert("No se pudo eliminar el idioma");
         }
+        , err => {
+         alert("Idioma eliminado");
+         this.cargarIdiomas();
+       }
       )
-    }
+    // }
   }
 }
 

@@ -1,0 +1,31 @@
+<form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+    <div class="formulario">
+    <h5>Editar Idioma</h5>
+    <div class="mb-3">
+      <label for="id" class="form-label"></label>
+      <input  [ngModel]="idioma.id" type="hidden" formControlName="id" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" formControlName="nombre" class="form-control"     [ngModel]="idioma.nombre" [ngClass]="{'is-invalid': Nombre.errors && Nombre.touched,'is-valid':!Nombre.errors && Nombre.touched}">
+      <div *ngIf="Nombre.errors && Nombre.touched"> 
+      <p *ngIf="Nombre.hasError('required')" class="text-danger" role="alert">
+        El nombre es requerido
+      </p>
+    </div>
+    </div>
+    <div class="mb-3">
+      <label for="nivel" class="form-label">Nivel</label>
+      <input type="text" formControlName="nivel" class="form-control"   [ngModel]="idioma.nivel" [ngClass]="{'is-invalid': Nivel.errors && Nivel.touched,'is-valid':!Nivel.errors && Nivel.touched}">
+      <div *ngIf="Nivel.errors && Nivel.touched"> 
+      <p *ngIf="Nivel.hasError('required')" class="text-danger" role="alert">
+        El nivel es requerido
+      </p>
+    </div>
+  </div>
+    <div>
+    <button type="submit" class="btn btn-secondary">Guardar</button>
+  </div>
+</div>
+</form>
+
