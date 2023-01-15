@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Idiomas } from 'src/app/entidades/idiomas';
 import { SIdiomassService } from 'src/app/servicios/s-idiomas.service';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-idiomas',
@@ -10,39 +11,33 @@ import { SIdiomassService } from 'src/app/servicios/s-idiomas.service';
 export class IdiomasComponent implements OnInit {
 idiom: Idiomas[]=[];
 
-  constructor(private sIdiomas:SIdiomassService) { }
+  constructor(private sIdiomas:SIdiomassService, private tokenService: TokenService) { }
 
   isLogged= false;
 
   ngOnInit(): void {
-
-    this.sIdiomas.lista().subscribe(data => {this.idiom = data});
-
-  // this.cargarIdiomas();
-  //   if (this.autenticacionService.usuarioAutenticado()) {
-  //     this.isLogged = true;
-  //   } else {
-  //     this.isLogged = false;
-  //   }
+    this.cargarIdiomas();
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    }else{
+      this.isLogged = false;
+    }
   }
 
   cargarIdiomas(): void {
     this.sIdiomas.lista().subscribe(data => {this.idiom = data});
   }
 
-  //por tema de versiones lo tuve que hacer de este modo
   borrar(id: number){
-    // if(id != undefined){
       this.sIdiomas.borrarIdiomas(id).subscribe(
         data => {
           alert("No se pudo eliminar el idioma");
         }
         , err => {
-         alert("Idioma eliminado");
+         alert("Se eliminará el registro");
          this.cargarIdiomas();
        }
       )
-    // }
   }
 }
 

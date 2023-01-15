@@ -5,7 +5,7 @@
         <h5>Idiomas</h5> 
       </div>
       <div class="col-3 text-center">
-        <div class="btn-group">
+        <div class="btn-group" *ngIf="isLogged">
           <button type="button" class="btn btn-outline-secondary btn-sm" routerLink="/idiomas/crear">Nuevo Idioma</button>
           <!-- *ngIf="isLogged" falta agregar en el boton de agregar-->
           </div>
@@ -21,7 +21,7 @@
       </div>
       <div class="col-2">
       </div>
-      <div class="col-2">
+      <div class="col-2" *ngIf="isLogged">
         <button type="button" class="btn btn-outline-secondary btn-sm" routerLink="/editar-idiomas/{{Idiomas.id}}"><i class="fa-solid fa-pencil"></i></button>
         <button type="button" class="btn btn-outline-secondary btn-sm" (click)="borrar(Idiomas.id)"><i class="fa-solid fa-trash"></i></button>
         <!-- *ngIf="isLogged" falta agregar en el boton de agregar-->

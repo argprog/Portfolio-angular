@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Habilidad } from 'src/app/entidades/habilidad';
 import { Shabilidadeservice } from 'src/app/servicios/s-habilidad.service';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-skills',
@@ -10,38 +11,32 @@ import { Shabilidadeservice } from 'src/app/servicios/s-habilidad.service';
 export class SkillsComponent implements OnInit {
   habi: Habilidad[]=[];
 
-  constructor(private sHabilidad:Shabilidadeservice) { }
+  constructor(private sHabilidad:Shabilidadeservice, private tokenService: TokenService) { }
 
   isLogged= false;
 
   ngOnInit(): void {
-
-    this.sHabilidad.lista().subscribe(data => {this.habi = data});
-
-  // this.cargarHabilidad();
-  //   if (this.autenticacionService.usuarioAutenticado()) {
-  //     this.isLogged = true;
-  //   } else {
-  //     this.isLogged = false;
-  //   }
+    this.cargarHabilidad();
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    }else{
+      this.isLogged = false;
+    }
   }
 
   cargarHabilidad(): void {
     this.sHabilidad.lista().subscribe(data => {this.habi = data});
   }
 
-  //por tema de versiones lo tuve que hacer de este modo
   borrar(id: number){
-    // if(id != undefined){
       this.sHabilidad.borrarHabilidad(id).subscribe(
         data => {
           alert("No se pudo eliminar la Habilidad");
         }
         , err => {
-         alert("Habilidad eliminada");
+         alert("Se eliminará el registro");
          this.cargarHabilidad();
        }
       )
-    // }
   }
 }

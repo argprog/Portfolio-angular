@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Persona } from 'src/app/entidades/persona';
 import { PortfolioService } from 'src/app/servicios/portfolio.service';
-import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-editar-acercade',
@@ -14,13 +13,11 @@ export class EditarAcercadeComponent implements OnInit {
 
 form:FormGroup;
 persona: Persona;
-isLogged=false
 
   constructor(private formBuilder:FormBuilder,
               private miPortfolio:PortfolioService,
               private activatedRoute: ActivatedRoute,
-              private router:Router,
-              private tokenService: TokenService) { 
+              private router:Router) { 
 
                 this.form=this.formBuilder.group({
                   id:[''],
@@ -37,7 +34,6 @@ isLogged=false
     const id=this.activatedRoute.snapshot.params['id'];
     this.miPortfolio.obtenerDato(id).subscribe(data=>{
       this.persona=data;
-      
     },error=>{
     alert("Error en la carga de datos");
     this.router.navigate(['']);

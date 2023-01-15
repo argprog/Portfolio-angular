@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Experiencia } from 'src/app/entidades/experiencia';
 import { SExperienciaService } from 'src/app/servicios/s-experiencia.service';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-experiencia',
@@ -9,39 +10,32 @@ import { SExperienciaService } from 'src/app/servicios/s-experiencia.service';
 })
 export class ExperienciaComponent implements OnInit {
   expe: Experiencia[]=[];
+  isLogged: boolean = false;
 
-  constructor(private sExperiencia:SExperienciaService) { }
-
-  isLogged= false;
+  constructor(private sExperiencia:SExperienciaService, private tokenService:TokenService) { }
 
   ngOnInit(): void {
-
-    this.sExperiencia.lista().subscribe(data => {this.expe = data});
-
-  // this.cargarExperiencia();
-  //   if (this.autenticacionService.usuarioAutenticado()) {
-  //     this.isLogged = true;
-  //   } else {
-  //     this.isLogged = false;
-  //   }
+    this.cargarExperiencia();
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    }else{
+      this.isLogged = false;
+    }
   }
 
   cargarExperiencia(): void {
     this.sExperiencia.lista().subscribe(data => {this.expe = data});
   }
 
-  //por tema de versiones lo tuve que hacer de este modo
   borrar(id: number){
-    // if(id != undefined){
       this.sExperiencia.borrarExperiencia(id).subscribe(
         data => {
           alert("No se pudo eliminar la experiencia");
         }
         , err => {
-         alert("Experiencia eliminada");
+         alert("Se eliminará la experiencia");
          this.cargarExperiencia();
        }
       )
-    // }
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Proyecto } from 'src/app/entidades/proyecto';
 import { SProyectoService } from 'src/app/servicios/s-proyecto.service';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-projects',
@@ -10,32 +11,33 @@ import { SProyectoService } from 'src/app/servicios/s-proyecto.service';
 export class ProjectsComponent implements OnInit {
   proye: Proyecto[]=[];
 
-  constructor(private sProyecto:SProyectoService) { }
+  constructor(private sProyecto:SProyectoService, private tokenService:TokenService) { }
 
   isLogged= false;
 
   ngOnInit(): void {
-
-    this.sProyecto.lista().subscribe(data => {this.proye = data});
+    this.cargarProyecto();
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    }else{
+      this.isLogged = false;
+    }
   }
 
   cargarProyecto(): void {
     this.sProyecto.lista().subscribe(data => {this.proye = data});
   }
 
-  //por tema de versiones lo tuve que hacer de este modo
   borrar(id: number){
-    // if(id != undefined){
       this.sProyecto.borrarProyecto(id).subscribe(
         data => {
           alert("No se pudo eliminar el Proyecto");
         }
         , err => {
-         alert("Proyecto eliminado");
+         alert("Se eliminará el registro");
          this.cargarProyecto();
        }
       )
-    // }
   }
 }
 

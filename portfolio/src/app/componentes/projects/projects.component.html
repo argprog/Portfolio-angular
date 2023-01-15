@@ -5,7 +5,7 @@
         <h5>Proyectos</h5> 
       </div>
       <div class="col-3 text-center">
-        <div class="btn-group">
+        <div class="btn-group" *ngIf="isLogged">
           <button type="button" class="btn btn-outline-secondary btn-sm" routerLink="/proyectos/crear">Nuevo proyecto</button>
           <!-- *ngIf="isLogged" falta agregar en el boton de agregar-->
           </div>
@@ -23,7 +23,7 @@
       <div class="col-4">
         <p small class="text-muted">{{Proyecto.nombre}}</p>
       </div>
-      <div class="col-2">
+      <div class="col-2" *ngIf="isLogged">
         <button type="button" class="btn btn-outline-secondary btn-sm" routerLink="/editar-proyectos/{{Proyecto.id}}"><i class="fa-solid fa-pencil"></i></button>
         <button type="button" class="btn btn-outline-secondary btn-sm" (click)="borrar(Proyecto.id)"><i class="fa-solid fa-trash"></i></button>
         <!-- *ngIf="isLogged" falta agregar en el boton de agregar-->

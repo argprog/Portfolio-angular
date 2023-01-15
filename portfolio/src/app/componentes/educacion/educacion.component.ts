@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Educacion } from 'src/app/entidades/educacion';
 import { SEducacionService } from 'src/app/servicios/s-educacion.service';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-educacion',
@@ -10,38 +11,32 @@ import { SEducacionService } from 'src/app/servicios/s-educacion.service';
 export class EducacionComponent implements OnInit {
   edu: Educacion[]=[];
 
-  constructor(private sEducacion:SEducacionService) { }
+  constructor(private sEducacion:SEducacionService, private tokenService: TokenService) { }
 
   isLogged= false;
 
   ngOnInit(): void {
-
-    this.sEducacion.lista().subscribe(data => {this.edu = data});
-
-  // this.cargarEducacion();
-  //   if (this.autenticacionService.usuarioAutenticado()) {
-  //     this.isLogged = true;
-  //   } else {
-  //     this.isLogged = false;
-  //   }
+    this.cargarEducacion();
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    }else{
+      this.isLogged = false;
+    }
   }
 
   cargarEducacion(): void {
     this.sEducacion.lista().subscribe(data => {this.edu = data});
   }
 
-  //por tema de versiones lo tuve que hacer de este modo
   borrar(id: number){
-    // if(id != undefined){
       this.sEducacion.borrarEducacion(id).subscribe(
         data => {
           alert("No se pudo eliminar la Educacion");
         }
         , err => {
-         alert("Educacion eliminada");
+         alert("Se eliminará el registro");
          this.cargarEducacion();
        }
       )
-    // }
   }
 }
