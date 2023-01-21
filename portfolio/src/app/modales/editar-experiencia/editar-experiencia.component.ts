@@ -25,6 +25,7 @@ export class EditarExperienciaComponent implements OnInit {
       fecha_inicio:['',[Validators.required]],
       fecha_fin:['',[Validators.required]],
       puesto:['',[Validators.required]],
+      imagen:['',[Validators.required]]
     })
    }
 
@@ -48,6 +49,9 @@ export class EditarExperienciaComponent implements OnInit {
     return this.form.get("fecha_fin");
   }
   get Puesto(){
+    return this.form.get("puesto");
+  }
+  get Imagen(){
     return this.form.get("puesto");
   }
 

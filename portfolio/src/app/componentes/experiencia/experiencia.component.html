@@ -1,33 +1,43 @@
-  <section class="experiencia">
-    <div class="container-titulo">
-      <div class="row" >
-        <div class="col-9">
-          <h5>Experiencia</h5> 
-        </div>
-        <div class="col-3 text-center">
-          <div class="btn-group" *ngIf="isLogged">
-            <button type="button" class="btn btn-outline-secondary btn-sm" routerLink="/experiencias/crear">Nueva Experiencia</button>
-            <!-- *ngIf="isLogged" falta agregar en el boton de agregar-->
-            </div>
-        </div> 
-    </div>
+<section class="experiencia" id="experiencia">
+  <div class="container-fluid">
+  <div class="container-titulo">
+    <div class="row" >
+      <div class="col-9">
+        <h5>Experiencia</h5> 
+      </div>
+      <div class="col-3 text-center">
+        <div class="btn-group" *ngIf="isLogged">
+          <button type="button" class="btn btn-outline-secondary btn-sm" routerLink="/experiencias/crear">Nueva Experiencia</button>
+          </div>
+      </div> 
   </div>
-    <div class="container text-center">
-      <div class="row" *ngFor="let Experiencia of expe">
-        <div class="col-2">
-        <p small class="text-muted">{{Experiencia.fecha_inicio}} {{Experiencia.fecha_fin}}</p>
-        </div>
-       <div class="col-4">
-          <p small class="text-muted">{{Experiencia.empresa}}</p>
-        </div>
-        <div class="col-4">
-          <p small class="text-muted">{{Experiencia.puesto}}</p>
-        </div>
-        <div class="col-2" *ngIf="isLogged">
-          <button type="button" class="btn btn-outline-secondary btn-sm" routerLink="/editar-experiencia/{{Experiencia.id}}"><i class="fa-solid fa-pencil"></i></button>
-          <button type="submit" class="btn btn-outline-secondary btn-sm"(click)="borrar(Experiencia.id)"><i class="fa-solid fa-trash"></i></button>
-          <!-- *ngIf="isLogged" falta agregar en el boton de agregar-->
-        </div>
+</div>
+
+<div class="row" *ngFor="let Experiencia of expe">
+  <div class="col-1"></div>
+<div class="col-9">
+
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img [src]="Experiencia.imagen" class="img-fluid" alt="logo">
+    </div>
+    <div class="col-md-6">
+      <div class="card-body">
+        <h6 class="card-title">{{Experiencia.empresa}}</h6>
+        <p>{{Experiencia.puesto}}</p>
+        <p class="text-muted">{{Experiencia.fecha_inicio}} - {{Experiencia.fecha_fin}}</p>
       </div>
     </div>
-    </section>
+  </div>
+
+</div>
+
+<div class="col-2" *ngIf="isLogged">
+  <button type="button" class="btn btn-outline-secondary btn-sm" routerLink="/editar-experiencia/{{Experiencia.id}}"><i class="fa-solid fa-pencil"></i></button>
+  <button type="submit" class="btn btn-outline-secondary btn-sm"(click)="borrar(Experiencia.id)"><i class="fa-solid fa-trash"></i></button>
+</div>
+</div>
+  </div>
+  <a class="nav-link" href="#header">Volver</a>
+  </section>
+ 

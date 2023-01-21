@@ -1,7 +1,16 @@
-.logoidiomas{
-    width: 30%;
-    height: 40%;
-    float: left;
-    margin-right: 5%;
-    margin-bottom: 2%;
+p{
+    color:rgb(71, 69, 69);
+}
+
+.img-fluid{
+    width: 40%;
+    margin: 5%;
+    margin-left: 20%;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.4);
+    opacity: 0.7;
+}
+
+.img-fluid:hover{
+    transform: translateY(-3%);
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
 }

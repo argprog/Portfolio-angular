@@ -21,6 +21,7 @@ form:FormGroup;
                 fecha_inicio:['',[Validators.required]],
                 fecha_fin:['',[Validators.required]],
                 puesto:['',[Validators.required]],
+                imagen:['',[Validators.required]],
               })
             }
 
@@ -44,6 +45,10 @@ form:FormGroup;
     return this.form.get("puesto");
   }
 
+  get Imagen(){
+    return this.form.get("imagen");
+  }
+  
   crearExperiencia():void{
     this.sExperiencia.crearExperiencia(this.form.value).subscribe(
       data=>{

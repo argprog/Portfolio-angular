@@ -19,6 +19,15 @@
           </p>
         </div>
       </div>
+      <div class="mb-3">
+        <label for="imagen" class="form-label">Imagen</label>
+        <input type="text" class="form-control" placeholder="Ingrese la url de la imagen" id="imagen" formControlName="imagen" >
+        <div *ngIf="Imagen.errors && Imagen.touched"> 
+          <p *ngIf="Imagen.hasError('required')" class="text-danger" role="alert">
+            La imagen es requerida
+          </p>
+        </div>
+      </div>
     <button type="submit" class="btn btn-secondary">Agregar</button>
     </div>
   </form>

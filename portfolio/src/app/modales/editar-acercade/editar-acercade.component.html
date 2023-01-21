@@ -59,6 +59,15 @@
       </p>
       </div>
     </div>
+    <div class="mb-3">
+      <label for="imagen" class="form-label">Imagen</label>
+      <input type="text" placeholder="Ingrese la url de la imagen" formControlName="imagen" class="form-control" [ngModel]="persona.imagen" [ngClass]="{'is-invalid': Imagen.errors && Imagen.touched,'is-valid':!Imagen.errors && Imagen.touched}">
+    <div *ngIf="Imagen.errors && Imagen.touched"> 
+    <p *ngIf="Imagen.hasError('required')" class="text-danger" role="alert">
+      La imagen es requerida
+    </p>
+    </div>
+  </div>
     <div>
     <button type="submit" class="btn btn-secondary">Guardar</button>
   </div>

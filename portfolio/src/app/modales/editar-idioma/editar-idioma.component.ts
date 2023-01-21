@@ -24,6 +24,7 @@ export class EditarIdiomaComponent implements OnInit {
       id:[''],
       nombre:['',[Validators.required]],
       nivel:['',[Validators.required]],
+      imagen:['',[Validators.required]],
     })
    }
 
@@ -42,6 +43,9 @@ export class EditarIdiomaComponent implements OnInit {
   }
   get Nivel(){
     return this.form.get("nivel");
+  }
+  get Imagen(){
+    return this.form.get("imagen");
   }
 
   onUpdate():void{

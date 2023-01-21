@@ -20,6 +20,7 @@ export class NuevoProyectoComponent implements OnInit {
                 institucion:['',[Validators.required]],
                 fecha:['',[Validators.required]],
                 nombre:['',[Validators.required]],
+                imagen:['',[Validators.required]],
               })
             }
 
@@ -37,6 +38,10 @@ export class NuevoProyectoComponent implements OnInit {
 
   get Nombre(){
     return this.form.get("nombre");
+  }
+
+  get Imagen(){
+    return this.form.get("imagen");
   }
 
   crearProyecto():void{

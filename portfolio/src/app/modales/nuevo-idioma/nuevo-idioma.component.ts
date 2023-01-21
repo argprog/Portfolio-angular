@@ -18,6 +18,7 @@ export class NuevoIdiomaComponent implements OnInit {
               this.form=this.formBuilder.group({
                 nombre:['',[Validators.required]],
                 nivel:['',[Validators.required]],
+                imagen:['',[Validators.required]],
               })
             }
 
@@ -31,6 +32,10 @@ export class NuevoIdiomaComponent implements OnInit {
 
   get Nivel(){
     return this.form.get("nivel");
+  }
+
+  get Imagen(){
+    return this.form.get("imagen");
   }
 
   crearIdiomas():void{

@@ -28,6 +28,7 @@ import { NuevaHabilidadComponent } from './modales/nueva-habilidad/nueva-habilid
 import { NuevoProyectoComponent } from './modales/nuevo-proyecto/nuevo-proyecto.component';
 import { EditarProyectoComponent } from './modales/editar-proyecto/editar-proyecto.component';
 import { InterceptorService } from './servicios/interceptor.service';
+import { ScrollToTopComponent } from './componentes/scroll-to-top/scroll-to-top.component';
 
 
 @NgModule({
@@ -55,7 +56,7 @@ import { InterceptorService } from './servicios/interceptor.service';
     NuevaHabilidadComponent,
     NuevoProyectoComponent,
     EditarProyectoComponent,
-   
+    ScrollToTopComponent,
   ],
   imports: [
     

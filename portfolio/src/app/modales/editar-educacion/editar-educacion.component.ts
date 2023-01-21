@@ -25,6 +25,7 @@ export class EditarEducacionComponent implements OnInit {
       institucion:['',[Validators.required]],
       fecha:['',[Validators.required]],
       titulo:['',[Validators.required]],
+      imagen:['',[Validators.required]],
      })
    }
 
@@ -46,6 +47,9 @@ export class EditarEducacionComponent implements OnInit {
   }
   get Titulo(){
     return this.form.get("titulo");
+  }
+  get Imagen(){
+    return this.form.get("imagen");
   }
 
   onUpdate():void{

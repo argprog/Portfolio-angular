@@ -27,6 +27,7 @@ persona: Persona;
                   profesion:['',[Validators.required]],
                   correo_electronico:['',[Validators.required]],
                   telefono:['',[Validators.required]],
+                  imagen:['',[Validators.required]],
                 })
               }
 
@@ -58,6 +59,9 @@ persona: Persona;
   }
   get Telefono(){
     return this.form.get("telefono");
+  }
+  get Imagen(){
+    return this.form.get("imagen");
   }
 
   onUpdate():void{

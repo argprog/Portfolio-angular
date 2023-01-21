@@ -24,6 +24,7 @@ export class EditarProyectoComponent implements OnInit {
       institucion:['',[Validators.required]],
       fecha:['',[Validators.required]],
       nombre:['',[Validators.required]],
+      imagen:['',[Validators.required]],
      })
    }
 
@@ -45,6 +46,9 @@ export class EditarProyectoComponent implements OnInit {
   }
   get Nombre(){
     return this.form.get("nombre");
+  }
+  get Imagen(){
+    return this.form.get("imagen");
   }
 
   onUpdate():void{

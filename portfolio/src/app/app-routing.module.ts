@@ -17,6 +17,7 @@ import { NuevoProyectoComponent } from './modales/nuevo-proyecto/nuevo-proyecto.
 import { EditarProyectoComponent } from './modales/editar-proyecto/editar-proyecto.component';
 import { GuardGuard } from './servicios/guard.guard';
 
+
 const routes: Routes = [
   {path:'', component:IndexComponent}, //canActivate:[GuardGuard]},
   {path:'login', component:LoginComponent},

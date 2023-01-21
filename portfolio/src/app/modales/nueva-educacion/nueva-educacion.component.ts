@@ -20,6 +20,7 @@ export class NuevaEducacionComponent implements OnInit {
                 institucion:['',[Validators.required]],
                 fecha:['',[Validators.required]],
                 titulo:['',[Validators.required]],
+                imagen:['',[Validators.required]],
               })
             }
 
@@ -39,6 +40,9 @@ export class NuevaEducacionComponent implements OnInit {
     return this.form.get("titulo");
   }
 
+  get Imagen(){
+    return this.form.get("imagen");
+  }
 
   crearEducacion():void{
     this.sEducacion.crearEducacion(this.form.value).subscribe(
