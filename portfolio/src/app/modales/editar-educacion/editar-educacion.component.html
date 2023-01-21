@@ -3,11 +3,11 @@
   <h5>Editar Educación</h5>
   <div class="mb-3">
     <label for="id" class="form-label"></label>
-    <input  [ngModel]="educacion.id" type="hidden" formControlName="id" class="form-control">
+    <input  [ngModel]="educacion?.id" type="hidden" formControlName="id" class="form-control">
   </div>
   <div class="mb-3">
     <label for="institucion" class="form-label">Institución</label>
-    <input type="text" formControlName="institucion" class="form-control"     [ngModel]="educacion.institucion" [ngClass]="{'is-invalid': Institucion.errors && Institucion.touched,'is-valid':!Institucion.errors && Institucion.touched}">
+    <input type="text" formControlName="institucion" class="form-control"     [ngModel]="educacion?.institucion" [ngClass]="{'is-invalid': Institucion.errors && Institucion.touched,'is-valid':!Institucion.errors && Institucion.touched}">
     <div *ngIf="Institucion.errors && Institucion.touched"> 
     <p *ngIf="Institucion.hasError('required')" class="text-danger" role="alert">
       La institucion es requerida
@@ -16,7 +16,7 @@
   </div>
   <div class="mb-3">
     <label for="fecha" class="form-label">Fecha</label>
-    <input type="text" formControlName="fecha" class="form-control"   [ngModel]="educacion.fecha" [ngClass]="{'is-invalid': Fecha.errors && Fecha.touched,'is-valid':!Fecha.errors && Fecha.touched}">
+    <input type="text" formControlName="fecha" class="form-control"   [ngModel]="educacion?.fecha" [ngClass]="{'is-invalid': Fecha.errors && Fecha.touched,'is-valid':!Fecha.errors && Fecha.touched}">
     <div *ngIf="Fecha.errors && Fecha.touched"> 
     <p *ngIf="Fecha.hasError('required')" class="text-danger" role="alert">
       La fecha es requerida
@@ -25,7 +25,7 @@
 </div>
   <div class="mb-3">
       <label for="titulo" class="form-label">Título</label>
-      <input type="text" formControlName="titulo" class="form-control" [ngModel]="educacion.titulo" [ngClass]="{'is-invalid': Titulo.errors && Titulo.touched,'is-valid':!Titulo.errors && Titulo.touched}">
+      <input type="text" formControlName="titulo" class="form-control" [ngModel]="educacion?.titulo" [ngClass]="{'is-invalid': Titulo.errors && Titulo.touched,'is-valid':!Titulo.errors && Titulo.touched}">
     <div *ngIf="Titulo.errors && Titulo.touched"> 
     <p *ngIf="Titulo.hasError('required')" class="text-danger" role="alert">
       El título es requerido
@@ -34,7 +34,7 @@
   </div>
   <div class="mb-3">
     <label for="imagen" class="form-label">Imagen</label>
-    <input type="text" formControlName="imagen" placeholder="Ingrese la url de la imagen" class="form-control" [ngModel]="educacion.imagen" [ngClass]="{'is-invalid': Imagen.errors && Imagen.touched,'is-valid':!Imagen.errors && Imagen.touched}">
+    <input type="text" formControlName="imagen" placeholder="Ingrese la url de la imagen" class="form-control" [ngModel]="educacion?.imagen" [ngClass]="{'is-invalid': Imagen.errors && Imagen.touched,'is-valid':!Imagen.errors && Imagen.touched}">
   <div *ngIf="Imagen.errors && Imagen.touched"> 
   <p *ngIf="Imagen.hasError('required')" class="text-danger" role="alert">
     La imagen es requerida

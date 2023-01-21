@@ -19,12 +19,12 @@ export class SProyectoService {
   public detail(id:number):Observable<Proyecto>{
     return this.http.get<Proyecto>(this.url + `/proyectos/traer/${id}`);
   }
-  public crearProyecto(habi:Proyecto):Observable<any>{
-    return this.http.post<any>(this.url + '/proyectos/crear',habi);
+  public crearProyecto(proye:Proyecto):Observable<any>{
+    return this.http.post<any>(this.url + '/proyectos/crear',proye);
   }
 
-  public editarProyecto(habi:Proyecto):Observable<any>{
-    return this.http.put<any>(this.url + '/proyectos/editar',habi);
+  public editarProyecto(proye:Proyecto):Observable<any>{
+    return this.http.put<any>(this.url + '/proyectos/editar',proye);
   }
 
   public borrarProyecto(id:number):Observable<any>{

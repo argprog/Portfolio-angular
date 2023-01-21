@@ -12,9 +12,11 @@ section.banner{
 }
 
 .secciones{
-    position:absolute;
-    bottom: 0%;
-    left: 25%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
 }
 
 .nav-link, a{

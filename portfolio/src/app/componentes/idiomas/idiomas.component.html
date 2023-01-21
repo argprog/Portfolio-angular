@@ -8,7 +8,6 @@
       <div class="col-3 text-center">
         <div class="btn-group" *ngIf="isLogged">
           <button type="button" class="btn btn-outline-secondary btn-sm" routerLink="/idiomas/crear">Nuevo Idioma</button>
-          <!-- *ngIf="isLogged" falta agregar en el boton de agregar-->
           </div>
       </div> 
   </div>
@@ -32,7 +31,7 @@
 </div>
 
 <div class="col-2" *ngIf="isLogged">
-  <button type="button" class="btn btn-outline-secondary btn-sm" routerLink="/editar-experiencia/{{Idioma.id}}"><i class="fa-solid fa-pencil"></i></button>
+  <button type="button" class="btn btn-outline-secondary btn-sm" routerLink="/editar-idiomas/{{Idioma.id}}"><i class="fa-solid fa-pencil"></i></button>
   <button type="submit" class="btn btn-outline-secondary btn-sm"(click)="borrar(Idioma.id)"><i class="fa-solid fa-trash"></i></button>
 </div>
 </div>

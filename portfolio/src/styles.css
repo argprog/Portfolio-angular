@@ -15,7 +15,6 @@
 }
 
 h5{
-    /* color:rgb(71, 69, 69); */
     color: #333333;
     background: #FFFFFF;
     text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0,0,0,0.15);
@@ -29,9 +28,7 @@ h5{
 }
 
 p{
-    /* text-align: justify; */
     display: flex;
-    /* align-items: center; */
 }
 
 .list-group{
@@ -39,13 +36,14 @@ p{
 }
 
 .list-group-item {
-    color: rgb(71, 69, 69);
+    color:rgb(63, 62, 62);
     float: right;
     border: none;
     background-color: transparent;
+    opacity: 0.8;
 }
 
-.educacion, .experiencia, .idiomas, .skills, .acercade, .proyecto {
+.educacion, .experiencia, .idiomas, .skills, .acercade, .proyecto, .footer, .header {
     border: 1px solid grey
   
 }

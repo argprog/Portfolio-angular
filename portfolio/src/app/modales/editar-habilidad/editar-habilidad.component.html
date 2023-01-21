@@ -3,11 +3,11 @@
     <h5>Editar Habilidad</h5>
     <div class="mb-3">
       <label for="id" class="form-label"></label>
-      <input  [ngModel]="habilidad.id" type="hidden" formControlName="id" class="form-control">
+      <input  [ngModel]="habilidad?.id" type="hidden" formControlName="id" class="form-control">
     </div>
     <div class="mb-3">
       <label for="nombre" class="form-label">Habilidad</label>
-      <input type="text" formControlName="nombre" class="form-control"     [ngModel]="habilidad.nombre" [ngClass]="{'is-invalid': Nombre.errors && Nombre.touched,'is-valid':!Nombre.errors && Nombre.touched}">
+      <input type="text" formControlName="nombre" class="form-control"     [ngModel]="habilidad?.nombre" [ngClass]="{'is-invalid': Nombre.errors && Nombre.touched,'is-valid':!Nombre.errors && Nombre.touched}">
       <div *ngIf="Nombre.errors && Nombre.touched"> 
       <p *ngIf="Nombre.hasError('required')" class="text-danger" role="alert">
         El nombre es requerido
@@ -16,7 +16,7 @@
     </div>
     <div class="mb-3">
       <label for="porcentaje" class="form-label">Porcentaje</label>
-      <input type="text" formControlName="porcentaje" class="form-control"   [ngModel]="habilidad.porcentaje" [ngClass]="{'is-invalid': Porcentaje.errors && Porcentaje.touched,'is-valid':!Porcentaje.errors && Porcentaje.touched}">
+      <input type="text" formControlName="porcentaje" class="form-control"   [ngModel]="habilidad?.porcentaje" [ngClass]="{'is-invalid': Porcentaje.errors && Porcentaje.touched,'is-valid':!Porcentaje.errors && Porcentaje.touched}">
       <div *ngIf="Porcentaje.errors && Porcentaje.touched"> 
       <p *ngIf="Porcentaje.hasError('required')" class="text-danger" role="alert">
         El porcentaje es requerido

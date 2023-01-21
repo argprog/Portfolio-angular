@@ -62,7 +62,7 @@ export class EditarEducacionComponent implements OnInit {
     event.preventDefault;
     if (this.form.valid){
       this.onUpdate();
-      alert ("Moficado ok");
+      alert ("Datos modificados");
       this.router.navigate(['']);
     }else{
       alert ("Falló la carga. Intente nuevamente.");

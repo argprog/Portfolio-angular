@@ -47,11 +47,6 @@ export class NuevoProyectoComponent implements OnInit {
   crearProyecto():void{
     this.sProyecto.crearProyecto(this.form.value).subscribe(
       data=>{
-      //   alert ("Se agregó experiencia");
-      //   this.router.navigate(['']);
-      // },err=>{
-      //   alert ("Falló");
-      //   this.router.navigate(['']);
       }
       )
   }

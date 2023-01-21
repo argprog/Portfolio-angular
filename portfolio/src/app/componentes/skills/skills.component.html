@@ -8,7 +8,6 @@
       <div class="col-3 text-center">
         <div class="btn-group" *ngIf="isLogged">
           <button type="button" class="btn btn-outline-secondary btn-sm" routerLink="/habilidades/crear">Nueva Habilidad</button>
-          <!-- *ngIf="isLogged" falta agregar en el boton de agregar-->
           </div>
       </div> 
   </div>
@@ -26,11 +25,9 @@
         </div>
       </div>
       <div class="col-1"></div>
-
       <div class="col-2" *ngIf="isLogged">
         <button type="button" class="btn btn-outline-secondary btn-sm" routerLink="/editar-habilidades/{{Habilidad.id}}"><i class="fa-solid fa-pencil"></i></button>
         <button type="submit" class="btn btn-outline-secondary btn-sm"(click)="borrar(Habilidad.id)"><i class="fa-solid fa-trash"></i></button>
-        <!-- *ngIf="isLogged" falta agregar en el boton de agregar-->
       </div>
     </div>
   </div>

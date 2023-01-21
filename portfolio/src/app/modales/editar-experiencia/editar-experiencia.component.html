@@ -3,11 +3,11 @@
     <h5>Editar Experiencia</h5>
     <div class="mb-3">
       <label for="id" class="form-label"></label>
-      <input  [ngModel]="experiencia.id" type="hidden" formControlName="id" class="form-control">
+      <input  [ngModel]="experiencia?.id" type="hidden" formControlName="id" class="form-control">
     </div>
     <div class="mb-3">
       <label for="empresa" class="form-label">Empresa</label>
-      <input type="text" formControlName="empresa" class="form-control"     [ngModel]="experiencia.empresa" [ngClass]="{'is-invalid': Empresa.errors && Empresa.touched,'is-valid':!Empresa.errors && Empresa.touched}">
+      <input type="text" formControlName="empresa" class="form-control"     [ngModel]="experiencia?.empresa" [ngClass]="{'is-invalid': Empresa.errors && Empresa.touched,'is-valid':!Empresa.errors && Empresa.touched}">
       <div *ngIf="Empresa.errors && Empresa.touched"> 
       <p *ngIf="Empresa.hasError('required')" class="text-danger" role="alert">
         La empresa es requerida
@@ -16,7 +16,7 @@
     </div>
     <div class="mb-3">
       <label for="fecha_inicio" class="form-label">Fecha de inicio</label>
-      <input type="text" formControlName="fecha_inicio" class="form-control"   [ngModel]="experiencia.fecha_inicio" [ngClass]="{'is-invalid': Fecha_inicio.errors && Fecha_inicio.touched,'is-valid':!Fecha_inicio.errors && Fecha_inicio.touched}">
+      <input type="text" formControlName="fecha_inicio" class="form-control"   [ngModel]="experiencia?.fecha_inicio" [ngClass]="{'is-invalid': Fecha_inicio.errors && Fecha_inicio.touched,'is-valid':!Fecha_inicio.errors && Fecha_inicio.touched}">
       <div *ngIf="Fecha_inicio.errors && Fecha_inicio.touched"> 
       <p *ngIf="Fecha_inicio.hasError('required')" class="text-danger" role="alert">
         La fecha de inicio es requerida
@@ -25,7 +25,7 @@
   </div>
     <div class="mb-3">
         <label for="fecha_fin" class="form-label">Fecha de fin</label>
-        <input type="text" formControlName="fecha_fin" class="form-control" [ngModel]="experiencia.fecha_fin" [ngClass]="{'is-invalid': Fecha_fin.errors && Fecha_fin.touched,'is-valid':!Fecha_fin.errors && Fecha_fin.touched}">
+        <input type="text" formControlName="fecha_fin" class="form-control" [ngModel]="experiencia?.fecha_fin" [ngClass]="{'is-invalid': Fecha_fin.errors && Fecha_fin.touched,'is-valid':!Fecha_fin.errors && Fecha_fin.touched}">
       <div *ngIf="Fecha_fin.errors && Fecha_fin.touched"> 
       <p *ngIf="Fecha_fin.hasError('required')" class="text-danger" role="alert">
         La fecha de fin es requerida
@@ -34,7 +34,7 @@
     </div>
       <div class="mb-3">
         <label for="puesto" class="form-label">Puesto</label>
-        <input type="text" formControlName="puesto"class="form-control"  [ngModel]="experiencia.puesto" [ngClass]="{'is-invalid': Puesto.errors && Puesto.touched,'is-valid':!Puesto.errors && Puesto.touched}">
+        <input type="text" formControlName="puesto"class="form-control"  [ngModel]="experiencia?.puesto" [ngClass]="{'is-invalid': Puesto.errors && Puesto.touched,'is-valid':!Puesto.errors && Puesto.touched}">
       <div *ngIf="Puesto.errors && Puesto.touched"> 
       <p *ngIf="Puesto.hasError('required')" class="text-danger" role="alert">
         El puesto es requerido
@@ -43,7 +43,7 @@
        </div>
        <div class="mb-3">
         <label for="imagen" class="form-label">Imagen</label>
-        <input type="text" formControlName="imagen" placeholder="Ingrese la url de la imagen" class="form-control"  [ngModel]="experiencia.imagen" [ngClass]="{'is-invalid': Imagen.errors && Imagen.touched,'is-valid':!Imagen.errors && Imagen.touched}">
+        <input type="text" formControlName="imagen" placeholder="Ingrese la url de la imagen" class="form-control"  [ngModel]="experiencia?.imagen" [ngClass]="{'is-invalid': Imagen.errors && Imagen.touched,'is-valid':!Imagen.errors && Imagen.touched}">
       <div *ngIf="Imagen.errors && Imagen.touched"> 
       <p *ngIf="Imagen.hasError('required')" class="text-danger" role="alert">
         La imagen es requerida
