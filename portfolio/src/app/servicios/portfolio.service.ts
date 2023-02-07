@@ -8,20 +8,19 @@ import { Persona } from '../entidades/persona';
 })
 
 export class PortfolioService {
-url:string="http://localhost:8080";
+url:string="https://portfolio-back-end-8ppg.onrender.com";
   
-  constructor(private http:HttpClient) { }
-
-  public obtenerDatos():Observable<any>{
-    return this.http.get<any>(this.url + '/personas/traer');
+constructor(private httpClient: HttpClient) { }
+  
+  public lista(): Observable<Persona[]>{
+    return this.httpClient.get<Persona[]>(this.url + '/personas/traer');
   }
 
-  public obtenerDato(id:number):Observable<any>{
-    return this.http.get<any>(this.url + `/personas/traer/${id}`);
+  public ver(id: number):Observable<Persona>{
+  return this.httpClient.get<Persona>(this.url + `/personas/traer/${id}`);
   }
 
-  public editarPersona(perso:Persona):Observable<any>{
-    return this.http.put<any>(this.url + '/personas/editar', perso);
-  }
-
+  public editar(perso: Persona):Observable<any>{
+    return this.httpClient.put<any>(this.url + '/personas/editar', perso);
+    }
 }

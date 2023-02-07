@@ -8,7 +8,7 @@ import { Proyecto } from '../entidades/proyecto';
 })
 export class SProyectoService {
 
-  url="http://localhost:8080";
+  url:string="https://portfolio-back-end-8ppg.onrender.com";
 
   constructor(private http:HttpClient) { }
 

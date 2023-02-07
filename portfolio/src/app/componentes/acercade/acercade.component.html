@@ -8,7 +8,7 @@
       <div class="col-3 text-center">
         <div class="btn-group">
           <button *ngIf="isLogged" type="button" class="btn btn-outline-secondary btn-sm" 
-          routerLink="/editar-acercade/{{miPortfolio?.id}}">
+          routerLink="/editar-acercade/{{persona?.id}}">
           <i class="fa-solid fa-pencil"></i></button>
           </div>
       </div> 
@@ -16,14 +16,14 @@
 </div>
         <div class="row g-0">
         <div class="col-md-4">
-          <img [src]="miPortfolio?.imagen" class="img-fluid" alt="foto">
+          <img [src]="persona?.imagen" class="img-fluid" alt="foto">
         </div>
         <div class="col-md-6">
           <div class="card-body">
-            <h4 class="card-title">{{miPortfolio?.nombre}} {{miPortfolio?.apellido}}</h4>
-            <p>{{miPortfolio?.certificacion}}</p>
-            <p class="text-muted">{{miPortfolio?.profesion}}</p>
-            <p> <small class="text-muted"><i class="fa-regular fa-envelope"></i>  {{miPortfolio?.correo_electronico}} &nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-brands fa-whatsapp"></i> {{miPortfolio?.telefono}}</small></p>
+            <h4 class="card-title">{{persona?.nombre}} {{persona?.apellido}}</h4>
+            <p>{{persona?.certificacion}}</p>
+            <p class="text-muted">{{persona?.profesion}}</p>
+            <p> <small class="text-muted"><i class="fa-regular fa-envelope"></i>  {{persona?.correo_electronico}} &nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-brands fa-whatsapp"></i> {{persona?.telefono}}</small></p>
           </div>
         </div>
       </div>

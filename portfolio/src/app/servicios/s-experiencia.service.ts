@@ -8,7 +8,7 @@ import { Experiencia } from '../entidades/experiencia';
   providedIn: 'root'
 })
 export class SExperienciaService {
-  url="http://localhost:8080";
+  url:string="https://portfolio-back-end-8ppg.onrender.com";
 
 
   constructor(private http:HttpClient) { }

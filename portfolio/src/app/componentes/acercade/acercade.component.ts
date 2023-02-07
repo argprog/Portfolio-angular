@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
+import { Persona } from 'src/app/entidades/persona';
 import { PortfolioService } from 'src/app/servicios/portfolio.service';
 import { TokenService } from 'src/app/servicios/token.service';
 
@@ -9,18 +9,22 @@ import { TokenService } from 'src/app/servicios/token.service';
   styleUrls: ['./acercade.component.css']
 })
 export class AcercadeComponent implements OnInit {
-  miPortfolio:any;
-  isLogged=false;
-  roles: string[] = [];
 
-  constructor(private datosPortfolio:PortfolioService, private autenticacionServicio:AutenticacionService, private tokenService:TokenService) { }
+  persona: Persona;
+  isLogged:boolean=false;
+  constructor(public portfolioService: PortfolioService, private tokenService: TokenService) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDato(1).subscribe(data =>{
-      this.miPortfolio=data;});
-      if(this.tokenService.getToken()){
-        this.isLogged = true;
-        this.roles = this.tokenService.getAuthorities();
-      }
+    this.cargarPersona();
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    }else{
+      this.isLogged = false;
+    }
+  }
+  
+  cargarPersona():void{
+    this.portfolioService.ver(7).subscribe(data => 
+      {this.persona=data});
   }
 }

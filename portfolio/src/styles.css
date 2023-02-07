@@ -1,18 +1,7 @@
 *{
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    /* Por debajo de 700px */
-    @media screen and (max-width: 700px){
-    body{
-    font-size:10px;
-    }
-    }
-    /* Por debajo de 400px */
-    @media screen and (max-width: 400px){
-    body{
-    font-size:10px;
-    }
-    }
-}
+    font-size:15px;
+ }
 
 h5{
     color: #333333;

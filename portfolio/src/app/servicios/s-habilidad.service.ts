@@ -7,7 +7,7 @@ import { Habilidad } from '../entidades/habilidad';
   providedIn: 'root'
 })
 export class Shabilidadeservice {
-  url="http://localhost:8080";
+  url:string="https://portfolio-back-end-8ppg.onrender.com";
 
 
   constructor(private http:HttpClient) { }

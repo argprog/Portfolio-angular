@@ -33,7 +33,7 @@ persona: Persona;
 
   ngOnInit(): void {
     const id=this.activatedRoute.snapshot.params['id'];
-    this.miPortfolio.obtenerDato(id).subscribe(data=>{
+    this.miPortfolio.ver(id).subscribe(data=>{
       this.persona=data;
     },error=>{
     alert("Error en la carga de datos");
@@ -65,7 +65,7 @@ persona: Persona;
   }
 
   onUpdate():void{
-    this.miPortfolio.editarPersona(this.form.value).subscribe(data=>{
+    this.miPortfolio.editar(this.form.value).subscribe(data=>{
       console.log(this.form.value);
     })
   }

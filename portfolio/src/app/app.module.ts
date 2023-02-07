@@ -67,6 +67,7 @@ import { ScrollToTopComponent } from './componentes/scroll-to-top/scroll-to-top.
     HttpClientModule,
     AppRoutingModule,
   ],
+  
   providers: [PortfolioService,{provide:HTTP_INTERCEPTORS, useClass:InterceptorService,multi:true}],
   
   bootstrap: [AppComponent]
